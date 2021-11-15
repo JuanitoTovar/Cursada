@@ -326,3 +326,209 @@ Si mezclamos otros tipos de datos estos se convierten en cadena.
     let asiento = 7;
     let ubicacion = fila + asiento; //M7 como string.
 
+## Funciones
+
+Una función es un bloque de código que nos permite agrupar funcionalidad para usarla todas las veces que las necesitemos.
+Normalmente realizan una tarea especifica y retorna un valor.
+
+    function sumar (a,b){
+        return a + b;
+    }
+
+Parabra reservada **function** para indicarle a javascript que vamos a escribir una función.
+
+*Los parametros:*
+Dentro de los parentesis se ponen los parametros de la función, si hay mas de uno lo separamos con comas. Si la función no lleva parametros igual ponemos los parentisis \( \).
+
+Se puede trabajar con los parametros como si fueran variables, solo basta con escribir el nombre de las variables y con eso podremos trabajar con ellas.
+
+*Cuerpo:*
+
+Escribimos el cuerpo de la función entre las llaves de apertura \{ y la llave de cierre \} por ejemplo ***return a + b;***
+
+    function sumar (a, b){
+        return a + b;
+    }
+
+*Retorno:*
+Es muy común que al termar la ejcución de la función queramos que nos devuelva un resultado y esto lo hacemos con la palabra **return**.
+
+## Funciones Declaras.
+
+Son aquellas que se declaran usando la estructura básica, pueden recibir un nombre seguido de la palabra **function** a través del cual podemos invocarlas.
+
+Las funciones con nombres también se les llama
+**fuciones nombradas**.
+
+## Funciones expresadas.
+
+Estas funciones se conocen como **funciones anonimas** y son aquellas a las que se les asigna como valor a una variable. Y para invocarlas se les invoca desde la variable.
+
+    let hacerSushi= function (cantidad){
+        return 'burger'.repeat(cantandad);
+    }
+
+### Invocación:
+
+Podemos imaginarlas como si fueran maquinas en las cuales durane la declaración nos ocupamos en construir la maquina y durante la invocación las ponemos a funcionar.
+
+Primero declaramos la funcion:
+
+    function hacerHelado(){
+        return 'helado';
+    }
+
+y para invocarla:
+
+    hacerHelado(); // Retornara 'Helado'
+
+
+Si las funciones tienen parametros se puede hacer uso de los parametros invocandolos en el mismo orden en el que fueron puestos.
+
+    function saludar (nombre, apellido){
+        return 'Hola ' + nombre + ' ' + apellido
+    }
+
+Para invocarla es :
+
+    saludar ('Roberto','Rodriguez'); // Retornará 'Hola Roberto Rodriguez'
+
+Es importante tener en cuenta que cuando una funcion tiene parametros estos deben ponerse durante la invocación ya que de lo contrario mandará **undefined**
+
+También podemos pasarle a los parametros un valor por default por ejemplo:
+
+    function saludar (nombre = 'visitante', apellido = 'anónimo'){
+        return 'Hola ' + nombre + ' ' + apellido;
+    }
+
+Y la invocamos así:
+
+    saludar(); // Retornara 'Hola visitante anónimo'
+
+Podemos guardar la información que mande una función por ejemplo:
+
+    function hacerHelados(cantidad){
+        return 'helado'.repeat(cantidad);
+    }
+
+Y de esta forma guardamos la salida de la función:
+
+    let misHelados = hacerHelados(3);
+    console.log(misHelados); //Mostrara en consola 'helado helado helado'
+
+**parametros:**
+ Son las variable que escribimos cuando definimos una función.
+
+ **argumentos:**
+ Son los valores que enviamos cuando invocamos una función.
+
+ **scope o ambito:**
+El scope es el alcance que tiene una variable, es decir desde donde podemos acceder a ella, los scope esta definidos por las funciones.
+
+Cuando una variable es definida dentro de una función su alcance el local por lo cual no podrémos acceder a ella desde fuera de la función.
+
+    function hola (){
+        let saludo = 'Hola ¿que tal?
+        return saludo
+    }
+
+    console.log(saludo); // Uncaught ReferenceError: saludo is not defined
+
+Cuando declaramos la variable fuera esta tendra una alcance global es decir todos podrán acceder a ella.
+
+    let saludo = 'Hola Mundo';;
+
+    function hola(){
+        return saludo;
+    }
+
+    console.log(saludo); // esta mostrará el valor que tenga.
+
+## Componentes de un IF
+
+Nos permite evaluar condiciones y obtener diferentes resultados segun sus evaluaciones.
+
+*Condición simple:*
+
+    if (condicion){
+        // Código a ejecutar si la condición es vereadera.
+    }
+
+*Condición con bloque else
+
+La condición **Else** se ejecuta cuando la condición del if es falsa. Es importante comentar que el **Else** es opcional.
+
+    if (condición){
+        // Código a ejecutar si la condición es verdadera.
+    }else{
+        // Código a ejecutar si la condición es falsa.
+    }
+
+La cóndición **else if** es una validación que se realiza si la primera es falsa. Se puede tener tantos **else if** como se quiera pero solo uno puede ser verdadero, si ninguno es verdadero entrara a la condición del **else**.
+
+    if (condición){
+        // código a ejecutar si la condición es verdadera.
+    }else if (otra condición){
+        // Código a ejecutar si la otra codición es verdadera 
+    }else{
+        // Código a ejecutar si todas las condiciones son falsas.
+    }
+
+Es una buena practica poner un valor de default a las variables antes de ser usadas ya que de esta manera se identifica que tipo de datos va a manejar.
+
+    let texto = ''; //un texto vacio
+    let numero = 0; // un número vacío.
+
+ 
+## Los Arrays
+
+Los arrays nos permite generar colecciones de datos.
+
+Utilizamos corchetes para indicar inicio \[ y fin \] , dentro de los corchetes podemos utilizar cualquier tipo de dato. ES decir, podemos tener en un mismo array tipos de datos string, number, boolean y demás.
+
+    let miArray = ['start wars',true, 23];
+
+Cada array ocupa una posición numerada concida como índice. La primera posición del array es siempre 0.
+
+    let pelisFavoritas = ['Star Wars','Kill Bill','Alien];
+
+Para acceder a los elementos del array nombramos al array y dentro de los corchetes indicamos el indice al que queremos acceder.
+
+    pelisFavoritas[2];  // accedemos a la pelicula de Alien. el índice 2 del array.
+
+**Longitud del array:¨**
+
+Esta propiedad nos dice cuantos elementos hay dentro del array. Primero nombramos el array seguido de un punto ponemos la palabra **length**.
+
+    pelisFavoritas.length;  // Devuelve 3, el número de elementos del array.
+
+## Métodos de Array.
+
+En javascript los arrays son un tipo especial de datos, y es por eso que disponen de métodos muy utiles a la hora de trabjar con la información que hay adentro.
+
+Cuando una función le pertenece a un objeto, en este caso nuestro array, la llamamos **método**.
+
+**.push()** - Agrega uno o varios elementos al final del array.
+* __Recibe__ Uno o mas elementos como parámetros.
+* __retorna__ La nueva logitud del array.
+
+    let colores = ['Rojo','Naranja','Azul'];
+    colores.push('Violeta');
+
+    console.log(colores); //['Rojo','Naranja','Azul','Violeta']
+
+    colores.push('Gris','Oro');
+    
+    console.log(colores); // ['Rojo','Naranja','Azul','Violeta','Gris','Oro']
+    
+**.pop()** -Elemina el ultimo elemento del array.
+* __No recibe__ parametros.
+* __Devuelve_ el parametro eliminado.
+
+    let series = ['Mad Men','Breaking Bad','The Sopranos'];
+
+    //Creamos una variable para guardar los que devuelve .pop();
+    let ultimaSerie = series.pop();
+
+    console.log(series); //[Mad Men','Breaking Bad']
+    console.log(ultimaSerie); // ['The Sopranos']
