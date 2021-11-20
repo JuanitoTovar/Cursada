@@ -512,7 +512,8 @@ Cuando una función le pertenece a un objeto, en este caso nuestro array, la lla
 * __Recibe__ Uno o mas elementos como parámetros.
 * __retorna__ La nueva logitud del array.
 
-    let colores = ['Rojo','Naranja','Azul'];
+let colores = ['Rojo','Naranja','Azul'];    
+    
     colores.push('Violeta');
 
     console.log(colores); //['Rojo','Naranja','Azul','Violeta']
@@ -520,15 +521,127 @@ Cuando una función le pertenece a un objeto, en este caso nuestro array, la lla
     colores.push('Gris','Oro');
     
     console.log(colores); // ['Rojo','Naranja','Azul','Violeta','Gris','Oro']
-    
+
 **.pop()** -Elemina el ultimo elemento del array.
+
 * __No recibe__ parametros.
-* __Devuelve_ el parametro eliminado.
+* __Devuelve__ el parametro eliminado.
+
+Ejemplo:
 
     let series = ['Mad Men','Breaking Bad','The Sopranos'];
 
-    //Creamos una variable para guardar los que devuelve .pop();
+
+//Creamos una variable para guardar los que devuelve .pop();
+    
     let ultimaSerie = series.pop();
 
     console.log(series); //[Mad Men','Breaking Bad']
     console.log(ultimaSerie); // ['The Sopranos']
+
+
+**.shift()**
+Elimina el primer elemento de un array.
+* __No recibe__ parametros.
+* __Devuelve__ el elemento eliminado.
+
+Ejemplo:
+
+    let nombres = ['Frida','Diego','Sofia'];
+
+    // Creamos una variable para guardar lo que devuelve .shift()
+    let primerNombre = nombres.shift();
+
+    console.log(nombres); // ['Diego','Sofia'];
+    console.log(primerNombre); // ['Frida']
+
+**.unshift()**
+Agrega uno o varios elementos al principio de un array.
+
+* __Recibe__ uno o más elementos como parámetros.
+* __Retorna__ la nueva longitud del array.
+
+Ejemplo: 
+
+    let marcas = ['Audi'];
+
+    marcas.unshift('Ford');
+    console.log(marcas); // ['Ford','Audi']
+
+    Marcas.unshift('Ferrari','BMW');
+    console.log(marcas); // ['Ferrari','BMW','Ford','Audi']
+
+
+**.join()**
+Une los elementos de un array utilizando el separador que le indiquemos en caso de que no se le especifique *se utilizan las comas por defauld*
+
+* __Recibe__ un separador (string), es opcional.
+* __Retorna__ un string con los elementos unidos.
+
+Ejemplo: 
+
+    let dias = ['Lunes','Martes','Jueves'];
+
+    let separadosPorComas = dias.join();
+    console.log(separadosPorComas); //'Lunes,Martes,Jueves'
+
+    Let separadosPorGuin = dias.join('-');
+    console.log(separadosPorGuion); // 'Lunes- Martes - Jueves '
+
+**.idexOf()**
+
+Busca en el array elemento que recibe como parametro.
+
+* __Recibe__ un elemento a buscar en el array.
+* __Retorna__ el primer índice donde encontró lo que buscábamos. Si no le encuentra, ***retorna un -1***.
+
+Ejemplo:
+
+    let frutas = ['Manzana','Pera','Frutilla'];
+    
+    frutas.indexOf('Frutilla');  // Encontró lo que buscaba, devuelve 2 , el indice del elemento.
+
+    frutas.indexOf('Banana'); // No se encontro lo que buscaba. Devuelve -1
+
+
+**.lastIndexOf()**
+
+Es similar al IndexOF() con la diferencia que empieza a buscar de atras hacia adelante.
+
+En caso de haber elementos repetidos, devuelve la posición del primer elemento que encuentre osea el ultimo si miramos de izquierda a derecha.
+
+Ejemplo:
+
+    let clubes = ['Racing','Boca','Lanús','Boca'];
+
+    clubes.lastIndexOf('Boca'); //Encontró lo que buscaba. Devuelve 3
+
+    clubes.lastIndexOf('River'); //No encontro lo que buscaba. Devuelve -1
+
+**.includes()**
+
+También es similar al indexOf() con la diferencia que devuelve un booleano.
+
+* __Recibe__ un elemento a buscar en el array.
+* __Retorna__ true si encontró lo que buscábamos, false en caso contrario.
+
+Ejemplo:
+
+    let frutas = ['Manzana','Pera','Frutilla'];
+
+    fruta.includes('Frutilla'); // Encontró lo que buscaba. Devuelve true.
+
+    fruta.includes('Banana'); // No encontró lo que buscaba. Devuelve False.
+
+
+
+
+
+
+
+Citas:
+
+[CheatSheet](https://htmlcheatsheet.com/js/)  .- Son ejemplos de notas para los temas para hacerlo con los temas que voy revisando.
+
+
+
